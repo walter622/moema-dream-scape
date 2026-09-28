@@ -30,10 +30,10 @@ import pauliniaImage from "@/assets/loja-paulinia.webp.asset.json";
 const VIP_LINK = "#GRUPO_VIP";
 
 const stores = [
-  { name: "São Paulo — Moema", address: "Av. Jurucê, 488 — Moema — São Paulo/SP", image: moemaImage.url, imageClass: "object-center" },
-  { name: "Campinas — Shopping Iguatemi", address: "Av. Iguatemi, 777 — Vila Brandina — Campinas/SP", image: iguatemiImage.url, imageClass: "object-center" },
-  { name: "Campinas — Nova Campinas", address: "Av. Dr. Hermas Braga, 717 — Nova Campinas — Campinas/SP", image: novaCampinasImage.url, imageClass: "object-center" },
-  { name: "Paulínia", address: "Rua José Dresdi, 35 — Nova Paulínia — Paulínia/SP", image: pauliniaImage.url, imageClass: "object-center" },
+  { name: "São Paulo — Moema", address: "Av. Jurucê, 488 — Moema — São Paulo/SP", instagram: "@mjhomemoema", image: moemaImage.url, imageClass: "object-center" },
+  { name: "Campinas — Shopping Iguatemi", address: "Av. Iguatemi, 777 — Vila Brandina — Campinas/SP", instagram: "@mjhomeiguatemicampinas", image: iguatemiImage.url, imageClass: "object-center" },
+  { name: "Campinas — Nova Campinas", address: "Av. Dr. Hermas Braga, 717 — Nova Campinas — Campinas/SP", instagram: "@mjhomeoficial", image: novaCampinasImage.url, imageClass: "object-center" },
+  { name: "Paulínia", address: "Rua José Dresdi, 35 — Nova Paulínia — Paulínia/SP", instagram: "@mjhomepaulinia", image: pauliniaImage.url, imageClass: "object-center" },
 ];
 
 const testimonials = [
@@ -81,10 +81,10 @@ function CampaignButton() {
   return (
     <Button asChild variant="whatsapp" size="campaign">
       <a href={VIP_LINK} aria-label="Entrar no grupo exclusivo da Black MJ Home no WhatsApp">
-        <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current">
-          <MessageCircle className="size-4" strokeWidth={2.5} aria-hidden="true" />
+        <span className="grid size-7 shrink-0 place-items-center rounded-full bg-whatsapp-foreground text-whatsapp">
+          <MessageCircle className="size-4 fill-current" strokeWidth={2.5} aria-hidden="true" />
         </span>
-        <span className="text-balance leading-[1.15]">Clique e entre no grupo<br className="hidden sm:block" /> exclusivo do WhatsApp!</span>
+        <span className="text-balance">Clique e entre no grupo<br /> exclusivo do WhatsApp!</span>
       </a>
     </Button>
   );
@@ -171,9 +171,12 @@ function Index() {
         <figure className="overflow-hidden"><img src={loungeImage.url} alt="Sala real MJ Home com sofá modular e obras de arte" className="size-full object-cover object-center" width={768} height={1365} loading="lazy" /></figure>
       </section>
 
-      <section className="light-section px-5 py-20 sm:px-8 sm:py-28">
+      <section className="px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-5xl">
-          <SectionIntro eyebrow="Pronta-entrega" title="Sua casa pronta ainda em 2026" />
+          <header className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
+            <p className="mb-3 text-xs font-bold uppercase text-gold">Pronta-entrega</p>
+            <h2 className="font-display text-4xl font-semibold leading-none text-foreground sm:text-6xl">Sua casa pronta ainda em <span className="text-gold">2026</span></h2>
+          </header>
           <div className="mx-auto max-w-2xl"><CheckList items={["Design exclusivo e conforto premium com condições imperdíveis.", "Somente durante a Black MJ Home, em todas as lojas.", "Peças exclusivas, com condições que acontecem uma vez no ano."]} /></div>
           <div className="mt-10 text-center"><CampaignButton /></div>
         </div>
@@ -275,8 +278,8 @@ function Index() {
 
       <footer className="border-t border-border bg-surface px-5 pb-28 pt-16 sm:px-8 sm:pb-16 sm:pt-20">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.7fr_1.3fr]">
-          <div><img src={logo.url} alt="MJ Home" className="w-28" width={130} height={130} /><p className="mt-6 max-w-xs text-sm leading-6 text-muted-foreground">Móveis soltos e decoração de alto padrão há mais de 15 anos.</p><a href="https://instagram.com/mjhomeoficial" className="mt-5 inline-flex items-center gap-2 text-sm text-foreground hover:text-gold"><Instagram className="size-4" /> @mjhomeoficial</a></div>
-          <div className="grid gap-6 sm:grid-cols-2">{stores.map(({ name, address }) => <div key={name}><h3 className="text-sm font-bold">{name}</h3><p className="mt-2 text-xs leading-5 text-muted-foreground">{address}<br />(19) 99788-0222</p></div>)}</div>
+          <div><img src={logo.url} alt="MJ Home" className="w-28" width={130} height={130} /><p className="mt-6 max-w-xs text-sm leading-6 text-muted-foreground">Móveis soltos e decoração de alto padrão há mais de 15 anos.</p></div>
+          <div className="grid gap-6 sm:grid-cols-2">{stores.map(({ name, address, instagram }) => <div key={name}><h3 className="text-sm font-bold">{name}</h3><p className="mt-2 text-xs leading-5 text-muted-foreground">{address}<br />(19) 99788-0222</p><a href={`https://instagram.com/${instagram.slice(1)}`} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-sm text-foreground transition-colors hover:text-gold"><Instagram className="size-4" aria-hidden="true" /> {instagram}</a></div>)}</div>
         </div>
         <div className="mx-auto mt-14 max-w-6xl border-t border-border pt-6 text-xs text-muted-foreground">MJ Home® — Todos os direitos reservados.</div>
       </footer>

@@ -81,8 +81,8 @@ function CampaignButton() {
   return (
     <Button asChild variant="whatsapp" size="campaign">
       <a href={VIP_LINK} aria-label="Entrar no grupo exclusivo da Black MJ Home no WhatsApp">
-        <span className="grid size-7 shrink-0 place-items-center rounded-full bg-whatsapp-foreground text-whatsapp">
-          <MessageCircle className="size-4 fill-current" strokeWidth={2.5} aria-hidden="true" />
+        <span className="grid size-8 shrink-0 place-items-center rounded-full bg-whatsapp-foreground text-whatsapp">
+          <MessageCircle className="size-[18px] fill-current" strokeWidth={2.5} aria-hidden="true" />
         </span>
         <span className="text-balance">Clique e entre no grupo<br /> exclusivo do WhatsApp!</span>
       </a>

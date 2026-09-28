@@ -24,7 +24,7 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
-        campaign: "min-h-14 w-full rounded-full border-2 border-whatsapp-foreground/70 px-5 py-3 text-[0.8rem] font-extrabold uppercase leading-tight sm:w-auto sm:min-w-[21rem] sm:px-6 [&_svg]:size-8",
+        campaign: "min-h-14 w-full rounded-full border-2 border-whatsapp-foreground/70 px-5 py-3 text-[0.8rem] font-extrabold uppercase leading-tight sm:w-auto sm:min-w-[21rem] sm:px-6",
       },
     },
     defaultVariants: {

@@ -93,7 +93,7 @@
     --surface: oklch(0.86 0.006 90);
     --gold: oklch(0.55 0.1 80);
     background-color: var(--light-surface);
-    color: var(--color-foreground);
+    color: var(--foreground);
   }
 }
 

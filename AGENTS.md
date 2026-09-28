@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep all campaign content on the single `/` route; this is a focused, no-backend WhatsApp conversion page.
+- Keep the VIP WhatsApp destination in the `VIP_LINK` constant so every repeated campaign button stays synchronized.

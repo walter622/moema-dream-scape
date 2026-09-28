@@ -164,7 +164,7 @@ function Index() {
 
       <Marquee />
 
-      <section className="px-5 py-20 sm:px-8 sm:py-28">
+      <section className="light-section px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionIntro eyebrow="Pronta-entrega" title="Sua casa pronta ainda em 2026" />
           <div className="mx-auto max-w-2xl"><CheckList items={["Design exclusivo e conforto premium com condições imperdíveis.", "Somente durante a Black MJ Home, em todas as lojas.", "Peças exclusivas, com condições que acontecem uma vez no ano."]} /></div>
@@ -192,7 +192,7 @@ function Index() {
 
       <Marquee />
 
-      <section className="px-5 py-20 sm:px-8 sm:py-28">
+      <section className="light-section px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-20">
           <img src={diningImage} alt="Mesa de jantar e cadeiras disponíveis a pronta-entrega" className="aspect-[4/3] size-full rounded-sm object-cover" width={1408} height={1056} loading="lazy" />
           <div>
@@ -237,9 +237,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionIntro eyebrow="Experiências reais" title="O que nossos clientes dizem" />
+      <section className="light-section px-5 py-20 sm:px-8 sm:py-28">
           <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
             {testimonials.map(([name, store, quote]) => <article key={name} className="min-w-[85%] snap-center rounded-lg border border-border bg-card p-6 sm:min-w-0"><div className="flex gap-1 text-gold" aria-label="5 estrelas">{Array.from({length: 5}).map((_, index) => <Star key={index} className="size-3.5 fill-current" />)}</div><blockquote className="mt-6 font-display text-xl leading-7">“{quote}”</blockquote><footer className="mt-8 border-t border-border pt-5"><p className="text-sm font-bold">{name}</p><p className="mt-1 text-xs text-muted-foreground">{store}</p></footer></article>)}
           </div>

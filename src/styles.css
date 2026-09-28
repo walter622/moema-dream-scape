@@ -91,7 +91,8 @@
     --border: oklch(0.55 0.015 80);
     --card: oklch(0.91 0.006 90);
     --surface: oklch(0.86 0.006 90);
-    --gold: oklch(0.55 0.1 80);
+    --gold: oklch(0.24 0.008 80);
+    --gold-foreground: oklch(0.96 0.004 90);
     background-color: var(--light-surface);
     color: var(--foreground);
   }

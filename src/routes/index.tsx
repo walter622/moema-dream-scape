@@ -129,20 +129,30 @@ function Marquee() {
 function Index() {
   return (
     <main className="overflow-x-hidden bg-background text-foreground">
-      <section className="relative grid min-h-[92svh] place-items-center overflow-hidden px-5 py-24 sm:px-8">
-        <img src={heroImage} alt="Sala de estar contemporânea com móveis de alto padrão" className="absolute inset-0 size-full object-cover object-center" width={1920} height={1280} fetchPriority="high" />
-        <div className="hero-overlay absolute inset-0" />
-        <img src={logo.url} alt="MJ Home" className="absolute left-5 top-5 z-10 w-20 sm:left-8 sm:top-8 sm:w-24" width={130} height={130} />
-        <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
-          <CampaignSeal />
-          <p className="mt-7 text-xs font-bold uppercase text-gold">6, 7 e 8 de novembro · Apenas 3 dias</p>
-          <h1 className="mt-4 max-w-3xl font-display text-5xl font-semibold leading-[0.92] text-hero-foreground sm:text-7xl lg:text-8xl">
-            Black MJ Home <span className="text-gold">até 70% OFF</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-sm leading-6 text-hero-muted sm:text-lg sm:leading-8">
-            Móveis de alto padrão a pronta-entrega. Estoque limitado, peças exclusivas e tempo de ter sua casa pronta para as festas de final de ano.
-          </p>
-          <div className="mt-8"><CampaignButton /></div>
+      <section className="relative grid min-h-[92svh] overflow-hidden lg:grid-cols-2">
+        <div className="relative z-10 flex flex-col justify-center px-5 py-20 sm:px-10 lg:py-24 lg:pl-16 lg:pr-24 xl:pl-24">
+          <img src={logo.url} alt="MJ Home" className="absolute left-5 top-6 w-20 sm:left-10 sm:top-8 sm:w-24 lg:left-16 xl:left-24" width={130} height={130} />
+          <div className="mt-16 lg:mt-10">
+            <h1 className="font-display text-5xl font-semibold leading-[0.95] text-foreground sm:text-6xl xl:text-7xl">
+              Black MJ Home
+              <span className="mt-2 block text-gold">até 70% OFF</span>
+            </h1>
+            <p className="mt-7 flex items-center gap-3 text-base font-semibold text-foreground sm:text-lg">
+              <Clock3 className="size-5 shrink-0 text-gold" aria-hidden="true" />
+              <span>6, 7 e 8 de novembro <span className="text-gold">· Apenas 3 dias!</span></span>
+            </p>
+            <p className="mt-6 max-w-md text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+              Móveis de alto padrão com até <strong className="font-semibold text-foreground">70% de desconto</strong>, em pronta-entrega e sob encomenda. <strong className="font-semibold text-foreground">Estoque limitado – peças exclusivas.</strong>
+            </p>
+            <div className="mt-9"><CampaignButton /></div>
+          </div>
+        </div>
+        <div className="relative min-h-[420px] lg:min-h-0">
+          <img src={heroImage} alt="Sala de estar contemporânea com móveis de alto padrão" className="absolute inset-0 size-full object-cover object-center lg:[clip-path:polygon(12%_0,100%_0,100%_100%,0_100%)]" width={1920} height={1280} fetchPriority="high" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent lg:bg-none" />
+          <div className="absolute bottom-6 left-5 sm:left-10 lg:bottom-auto lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-1/3">
+            <CampaignSeal />
+          </div>
         </div>
       </section>
 

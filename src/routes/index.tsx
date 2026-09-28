@@ -17,7 +17,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import campaignSeal from "@/assets/selo-black-mj.png.asset.json";
 import logo from "@/assets/logo-mj-home.png.asset.json";
-import heroImage from "@/assets/foto-mj-home-05.webp.asset.json";
+import heroImage from "@/assets/showroom-hero-mj-home.webp.asset.json";
 import livingImage from "@/assets/foto-mj-home-08.webp.asset.json";
 import loungeImage from "@/assets/foto-mj-home-04.webp.asset.json";
 import chairImage from "@/assets/poltrona-mj-home.png.asset.json";
@@ -81,8 +81,10 @@ function CampaignButton() {
   return (
     <Button asChild variant="whatsapp" size="campaign">
       <a href={VIP_LINK} aria-label="Entrar no grupo exclusivo da Black MJ Home no WhatsApp">
-        <MessageCircle aria-hidden="true" />
-        <span className="text-balance">Clique e entre no grupo exclusivo do WhatsApp!</span>
+        <span className="grid size-8 shrink-0 place-items-center rounded-full border-2 border-current">
+          <MessageCircle className="size-4" strokeWidth={2.5} aria-hidden="true" />
+        </span>
+        <span className="text-balance leading-[1.15]">Clique e entre no grupo<br className="hidden sm:block" /> exclusivo do WhatsApp!</span>
       </a>
     </Button>
   );
@@ -121,7 +123,7 @@ function Marquee() {
           <div key={set} className="flex items-center gap-8">
             {Array.from({ length: 6 }).map((_, index) => (
               <span key={index} className="flex items-center gap-8 whitespace-nowrap">
-                Black MJ Home <Sparkles className="size-3" /> Até 70% OFF
+                Black MJ Home <span className="h-4 w-px bg-current opacity-55" /> Até 70% OFF <span className="h-4 w-px bg-current opacity-55" />
               </span>
             ))}
           </div>
@@ -161,13 +163,13 @@ function Index() {
         </div>
       </section>
 
+      <Marquee />
+
       <section aria-label="Ambientes MJ Home" className="grid h-[70vh] min-h-[480px] grid-cols-2 grid-rows-2 gap-1 bg-border sm:h-[76vh] sm:grid-cols-3 sm:grid-rows-1">
         <figure className="col-span-2 overflow-hidden sm:col-span-1"><img src={livingImage.url} alt="Ambiente real MJ Home com sofá e mesas de centro" className="size-full object-cover" width={768} height={960} loading="lazy" /></figure>
         <figure className="overflow-hidden"><img src={chairImage.url} alt="Poltrona clara de design orgânico da MJ Home" className="size-full object-cover" width={768} height={1152} loading="lazy" /></figure>
         <figure className="overflow-hidden"><img src={loungeImage.url} alt="Sala real MJ Home com sofá modular e obras de arte" className="size-full object-cover object-center" width={768} height={1365} loading="lazy" /></figure>
       </section>
-
-      <Marquee />
 
       <section className="light-section px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-5xl">
@@ -177,7 +179,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface px-5 py-20 sm:px-8 sm:py-28">
+      <section className="light-section border-y border-border px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <SectionIntro eyebrow="Nossa história" title="Há mais de 15 anos, transformamos ambientes em bem-estar." />
           <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
@@ -214,7 +216,7 @@ function Index() {
           <SectionIntro eyebrow="Anote na agenda" title="BLACK MJ HOME — 6, 7 e 8 de novembro" copy="A maior oportunidade do ano acontece simultaneamente em nossas quatro lojas." />
           <div className="grid gap-5 sm:grid-cols-2">
             {stores.map(({ name, address, image, imageClass }) => (
-              <article key={name} className="overflow-hidden rounded-lg border border-border bg-surface">
+              <article key={name} className="overflow-hidden rounded-lg border border-border bg-card">
                 <img src={image} alt={`Fachada da loja MJ Home ${name}`} className={`aspect-[16/10] w-full object-cover ${imageClass}`} loading="lazy" />
                 <div className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 p-6 sm:p-7">
                   <MapPin className="mt-1 size-5 shrink-0 text-gold" aria-hidden="true" />

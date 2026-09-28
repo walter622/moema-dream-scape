@@ -15,20 +15,25 @@ import {
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/black-mj-hero.jpg";
-import diningImage from "@/assets/showroom-dining.jpg";
-import loungeImage from "@/assets/showroom-lounge.jpg";
-import deliveryImage from "@/assets/delivery-team.jpg";
 import campaignSeal from "@/assets/selo-black-mj.png.asset.json";
 import logo from "@/assets/logo-mj-home.png.asset.json";
+import heroImage from "@/assets/foto-mj-home-05.webp.asset.json";
+import livingImage from "@/assets/foto-mj-home-08.webp.asset.json";
+import loungeImage from "@/assets/foto-mj-home-04.webp.asset.json";
+import chairImage from "@/assets/poltrona-mj-home.png.asset.json";
+import deliveryImage from "@/assets/entrega-caminhao-mj-home.webp.asset.json";
+import moemaImage from "@/assets/loja-moema.png.asset.json";
+import iguatemiImage from "@/assets/loja-iguatemi.png.asset.json";
+import novaCampinasImage from "@/assets/loja-nova-campinas.png.asset.json";
+import pauliniaImage from "@/assets/loja-paulinia.webp.asset.json";
 
 const VIP_LINK = "#GRUPO_VIP";
 
 const stores = [
-  ["São Paulo — Moema", "Av. Jurucê, 488 — Moema — São Paulo/SP"],
-  ["Campinas — Shopping Iguatemi", "Av. Iguatemi, 777 — Vila Brandina — Campinas/SP"],
-  ["Campinas — Nova Campinas", "Av. Dr. Hermas Braga, 717 — Nova Campinas — Campinas/SP"],
-  ["Paulínia", "Rua José Dresdi, 35 — Nova Paulínia — Paulínia/SP"],
+  { name: "São Paulo — Moema", address: "Av. Jurucê, 488 — Moema — São Paulo/SP", image: moemaImage.url, imageClass: "object-center" },
+  { name: "Campinas — Shopping Iguatemi", address: "Av. Iguatemi, 777 — Vila Brandina — Campinas/SP", image: iguatemiImage.url, imageClass: "object-center" },
+  { name: "Campinas — Nova Campinas", address: "Av. Dr. Hermas Braga, 717 — Nova Campinas — Campinas/SP", image: novaCampinasImage.url, imageClass: "object-center" },
+  { name: "Paulínia", address: "Rua José Dresdi, 35 — Nova Paulínia — Paulínia/SP", image: pauliniaImage.url, imageClass: "object-center" },
 ];
 
 const testimonials = [
@@ -148,7 +153,7 @@ function Index() {
           </div>
         </div>
         <div className="relative min-h-[420px] lg:min-h-0">
-          <img src={heroImage} alt="Sala de estar contemporânea com móveis de alto padrão" className="absolute inset-0 size-full object-cover object-center lg:[clip-path:polygon(12%_0,100%_0,100%_100%,0_100%)]" width={1920} height={1280} fetchPriority="high" />
+          <img src={heroImage.url} alt="Sala de estar real da MJ Home com sofá claro" className="absolute inset-0 size-full object-cover object-center lg:[clip-path:polygon(12%_0,100%_0,100%_100%,0_100%)]" width={1002} height={769} fetchPriority="high" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent lg:bg-none" />
           <div className="absolute bottom-6 left-5 sm:left-10 lg:bottom-auto lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-1/3">
             <CampaignSeal />
@@ -157,9 +162,9 @@ function Index() {
       </section>
 
       <section aria-label="Ambientes MJ Home" className="grid h-[70vh] min-h-[480px] grid-cols-2 grid-rows-2 gap-1 bg-border sm:h-[76vh] sm:grid-cols-3 sm:grid-rows-1">
-        <figure className="col-span-2 overflow-hidden sm:col-span-1"><img src={loungeImage} alt="Sala com sofá e poltronas de design contemporâneo" className="size-full object-cover" width={1408} height={1056} loading="lazy" /></figure>
-        <figure className="overflow-hidden"><img src={diningImage} alt="Sala de jantar com mesa em pedra natural" className="size-full object-cover" width={1408} height={1056} loading="lazy" /></figure>
-        <figure className="overflow-hidden"><img src={heroImage} alt="Sala sofisticada com iluminação acolhedora" className="size-full object-cover object-right" width={1920} height={1280} loading="lazy" /></figure>
+        <figure className="col-span-2 overflow-hidden sm:col-span-1"><img src={livingImage.url} alt="Ambiente real MJ Home com sofá e mesas de centro" className="size-full object-cover" width={768} height={960} loading="lazy" /></figure>
+        <figure className="overflow-hidden"><img src={chairImage.url} alt="Poltrona clara de design orgânico da MJ Home" className="size-full object-cover" width={768} height={1152} loading="lazy" /></figure>
+        <figure className="overflow-hidden"><img src={loungeImage.url} alt="Sala real MJ Home com sofá modular e obras de arte" className="size-full object-cover object-center" width={768} height={1365} loading="lazy" /></figure>
       </section>
 
       <Marquee />
@@ -194,7 +199,7 @@ function Index() {
 
       <section className="light-section px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-20">
-          <img src={diningImage} alt="Mesa de jantar e cadeiras disponíveis a pronta-entrega" className="aspect-[4/3] size-full rounded-sm object-cover" width={1408} height={1056} loading="lazy" />
+          <img src={livingImage.url} alt="Sofá e mesas de centro disponíveis na curadoria MJ Home" className="aspect-[4/3] size-full rounded-sm object-cover" width={768} height={960} loading="lazy" />
           <div>
             <p className="mb-3 text-xs font-bold uppercase text-gold">Curadoria MJ Home</p>
             <h2 className="font-display text-4xl font-semibold leading-none sm:text-6xl">Uma grande seleção de móveis a pronta-entrega</h2>
@@ -207,23 +212,32 @@ function Index() {
       <section className="border-y border-border bg-surface px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-6xl">
           <SectionIntro eyebrow="Anote na agenda" title="BLACK MJ HOME — 6, 7 e 8 de novembro" copy="A maior oportunidade do ano acontece simultaneamente em nossas quatro lojas." />
-          <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
-            {stores.map(([name, address]) => <article key={name} className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 bg-surface p-6 sm:p-8"><MapPin className="mt-1 size-5 shrink-0 text-gold" /><div className="min-w-0"><h3 className="font-display text-xl font-semibold">{name}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{address}</p></div></article>)}
+          <div className="grid gap-5 sm:grid-cols-2">
+            {stores.map(({ name, address, image, imageClass }) => (
+              <article key={name} className="overflow-hidden rounded-lg border border-border bg-surface">
+                <img src={image} alt={`Fachada da loja MJ Home ${name}`} className={`aspect-[16/10] w-full object-cover ${imageClass}`} loading="lazy" />
+                <div className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 p-6 sm:p-7">
+                  <MapPin className="mt-1 size-5 shrink-0 text-gold" aria-hidden="true" />
+                  <div className="min-w-0"><h3 className="font-display text-xl font-semibold">{name}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{address}</p></div>
+                </div>
+              </article>
+            ))}
           </div>
           <div className="mt-10 text-center"><CampaignButton /></div>
         </div>
       </section>
 
-      <section className="relative min-h-[680px] overflow-hidden px-5 py-20 sm:px-8 sm:py-28">
-        <img src={deliveryImage} alt="Equipe especializada realizando uma entrega cuidadosa" className="absolute inset-0 size-full object-cover" width={1600} height={1008} loading="lazy" />
-        <div className="delivery-overlay absolute inset-0" />
-        <div className="relative mx-auto flex min-h-[480px] max-w-6xl items-end">
-          <div className="max-w-2xl">
+      <section className="light-section px-5 py-20 sm:px-8 sm:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div>
             <Truck className="mb-6 size-9 text-gold" strokeWidth={1.5} />
-            <p className="mb-3 text-xs font-bold uppercase text-gold">Entrega própria, rápida e segura</p>
-            <h2 className="font-display text-4xl font-semibold leading-none text-hero-foreground sm:text-6xl">Montagem profissional, transporte cuidadoso e prazos seguros.</h2>
+            <p className="mb-3 text-xs font-bold uppercase text-gold">Cuidado em cada etapa</p>
+            <h2 className="font-display text-4xl font-semibold leading-none sm:text-6xl">Entrega própria, <em>rápida</em> e segura</h2>
+            <div className="my-6 h-px w-16 bg-gold" />
+            <p className="max-w-lg text-sm leading-7 text-muted-foreground sm:text-base">Nossa equipe é treinada para garantir que cada peça chegue perfeita, com transporte cuidadoso e montagem especializada.</p>
             <div className="mt-8"><CampaignButton /></div>
           </div>
+          <img src={deliveryImage.url} alt="Caminhão de entrega própria da MJ Home" className="aspect-[4/3] w-full rounded-lg object-cover" width={615} height={450} loading="lazy" />
         </div>
       </section>
 
@@ -260,7 +274,7 @@ function Index() {
       <footer className="border-t border-border bg-surface px-5 pb-28 pt-16 sm:px-8 sm:pb-16 sm:pt-20">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.7fr_1.3fr]">
           <div><img src={logo.url} alt="MJ Home" className="w-28" width={130} height={130} /><p className="mt-6 max-w-xs text-sm leading-6 text-muted-foreground">Móveis soltos e decoração de alto padrão há mais de 15 anos.</p><a href="https://instagram.com/mjhomeoficial" className="mt-5 inline-flex items-center gap-2 text-sm text-foreground hover:text-gold"><Instagram className="size-4" /> @mjhomeoficial</a></div>
-          <div className="grid gap-6 sm:grid-cols-2">{stores.map(([name, address]) => <div key={name}><h3 className="text-sm font-bold">{name}</h3><p className="mt-2 text-xs leading-5 text-muted-foreground">{address}<br />(19) 99788-0222</p></div>)}</div>
+          <div className="grid gap-6 sm:grid-cols-2">{stores.map(({ name, address }) => <div key={name}><h3 className="text-sm font-bold">{name}</h3><p className="mt-2 text-xs leading-5 text-muted-foreground">{address}<br />(19) 99788-0222</p></div>)}</div>
         </div>
         <div className="mx-auto mt-14 max-w-6xl border-t border-border pt-6 text-xs text-muted-foreground">MJ Home® — Todos os direitos reservados.</div>
       </footer>

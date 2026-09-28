@@ -32,6 +32,7 @@
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
   --color-surface: var(--surface);
+  --color-light-surface: var(--light-surface);
   --color-hero-foreground: var(--hero-foreground);
   --color-hero-muted: var(--hero-muted);
   --color-whatsapp: var(--whatsapp);
@@ -64,6 +65,7 @@
   --gold: oklch(0.76 0.09 82);
   --gold-foreground: oklch(0.13 0.008 75);
   --surface: oklch(0.135 0.006 75);
+  --light-surface: oklch(0.8 0.004 90);
   --hero-foreground: oklch(0.98 0.006 80);
   --hero-muted: oklch(0.86 0.018 80);
   --whatsapp: oklch(0.74 0.19 145);
@@ -77,6 +79,21 @@
   html { scroll-behavior: smooth; background: var(--color-background); }
   body { margin: 0; background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); letter-spacing: 0; }
   ::selection { background: var(--color-gold); color: var(--color-gold-foreground); }
+}
+
+@layer components {
+  /* Cinza claro do logo (#C0C0C0): blocos intercalados com os pretos.
+     Remapeia os tokens semânticos para texto escuro sobre o cinza. */
+  .light-section {
+    --background: oklch(0.8 0.004 90);
+    --foreground: oklch(0.2 0.008 80);
+    --muted-foreground: oklch(0.4 0.012 80);
+    --border: oklch(0.55 0.015 80);
+    --card: oklch(0.91 0.006 90);
+    --surface: oklch(0.86 0.006 90);
+    --gold: oklch(0.55 0.1 80);
+    background-color: var(--light-surface);
+  }
 }
 
 @utility hero-overlay {

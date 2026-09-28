@@ -238,6 +238,8 @@ function Index() {
       </section>
 
       <section className="light-section px-5 py-20 sm:px-8 sm:py-28">
+        <div className="mx-auto max-w-6xl">
+          <SectionIntro eyebrow="Experiências reais" title="O que nossos clientes dizem" />
           <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
             {testimonials.map(([name, store, quote]) => <article key={name} className="min-w-[85%] snap-center rounded-lg border border-border bg-card p-6 sm:min-w-0"><div className="flex gap-1 text-gold" aria-label="5 estrelas">{Array.from({length: 5}).map((_, index) => <Star key={index} className="size-3.5 fill-current" />)}</div><blockquote className="mt-6 font-display text-xl leading-7">“{quote}”</blockquote><footer className="mt-8 border-t border-border pt-5"><p className="text-sm font-bold">{name}</p><p className="mt-1 text-xs text-muted-foreground">{store}</p></footer></article>)}
           </div>
